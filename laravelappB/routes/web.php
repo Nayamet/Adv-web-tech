@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('/login',[PagesController::class,'login']);
 
-Route::get('/student/create',[StudentController::class,'create']);
-Route::get('/student/get',[StudentController::class,'get']);
-Route::get('/student/list',[StudentController::class,'list']);
+Route::get('/student/create',[StudentController::class,'create'])->name('student.create');
+Route::get('/student/get',[StudentController::class,'get'])->name('student.get');
+Route::get('/student/list',[StudentController::class,'list'])->name('student.list');
+Route::get('/student/details/{id}/{name}',[StudentController::class,'details'])->name('student.details');

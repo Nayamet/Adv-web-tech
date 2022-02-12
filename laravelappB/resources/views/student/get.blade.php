@@ -1,6 +1,6 @@
+@extends('Layout.loggedin')
+@section('content1')
 <h1>Get</h1>
-
-<br>
 <h3>Name : {{$name}}</h3>
 <h3>Id : {{$id}}</h3>
 
@@ -15,3 +15,4 @@
     <li>{{$c}}</li>
     @endforeach
 </ul>
+@endsection
