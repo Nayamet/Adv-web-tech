@@ -21,7 +21,13 @@ Route::get('/', function () {
 //     return view('login');
 // });
 
-Route::get('/login',[PagesController::class,'login']);
+
+Route::get('/login',[PagesController::class,'login'])->name('login');
+Route::post('/login',[PagesController::class,'loginSubmit'])->name('login.submit');
+
+Route::get('/registration',[PagesController::class,'registration'])->name('registration');
+Route::post('/registration',[PagesController::class,'registrationSubmit'])->name('registration.submit');
+
 
 Route::get('/student/create',[StudentController::class,'create'])->name('student.create');
 Route::get('/student/get',[StudentController::class,'get'])->name('student.get');

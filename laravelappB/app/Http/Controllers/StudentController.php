@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -23,17 +24,18 @@ class StudentController extends Controller
     }
     public function List()
     {
-        $students=array();
-        for($i=0;$i<5;$i++)
-        {
-            $student =array(
-                "id"=>$i+1,
-                "name"=>"student  ".( $i+1),
-                "dp"=>"cs"
-            );
-            $student=(object)$student;
-            $students[]=$student;
-        }
+        $students=Student::all();
+        // $students=array();
+        // for($i=0;$i<5;$i++)
+        // {
+        //     $student =array(
+        //         "id"=>$i+1,
+        //         "name"=>"student  ".( $i+1),
+        //         "dp"=>"cs"
+        //     );
+        //     $student=(object)$student;
+        //     $students[]=$student;
+        // }
         
         
         return view('student.list')
